@@ -1,0 +1,199 @@
+@font-face {
+    font-family: 'SegoeUI';
+    src: url(fonts/SegoeUI.ttf) format('ttf');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: 'SegoeUI_Bold';
+    src: url(fonts/SegoeUI.ttf) format('ttf');
+    font-weight: 700;
+}
+
+html {
+    font-size: 15px;
+    scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'SegoeUI', sans-serif;
+    font-weight: 500;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #000;
+}
+
+
+h1, h2, h3, h4, h5, h6, .product_details_price {
+    font-family: 'SegoeUI_Bold', sans-serif;
+    font-weight: 700;
+    line-height: 1.0;
+}
+
+h2 {
+    font-size: 2rem;
+    margin: 5px 0;
+}
+
+p {
+    margin-bottom: 7px;
+    text-align: justify;
+}
+
+.img {
+    width: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.img:hover {
+    transform: scale(1.1);
+}
+
+
+.container{
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+}
+
+.page-wrapper {
+    width: 100%;
+    max-width: 930px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.container .product {
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.product_details_price {
+    display: block;
+    font-size: 2rem;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.product_details_price span {
+    font-size: 1.5rem;
+    color: #8b8b8b;
+    text-decoration: line-through;
+}
+
+.button {
+    display: block;
+    margin-top: 20px;
+    padding: 12px 35px;
+    font-family: inherit;
+    font-size: 1rem;
+    line-height: 1.1;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    text-align: center;
+    cursor: pointer;
+    border: 0;
+    background-color: #c00d2b;
+    border-radius: 5px;
+    transition: background 0.2s linear;
+}
+
+.button:hover {
+    background-color: #bb3455;
+}
+
+/* all variants */
+
+.product_photo,
+.product_details,
+.fotoSmalScrine {
+    padding: 25px;
+}
+
+.product_photo,
+.product_details {
+    width: 49%;
+}
+
+
+/* inline */
+
+.card1 .product .product_photo,
+.card1 .product .product_details {
+    display: inline-block;
+    vertical-align: top;
+}
+
+/* table */
+
+.card2 .product .fotoSmalScrine {
+    display: none;
+}
+
+/* float */
+
+.card3 .product .product_photo,
+.card3 .product .product_details {
+    float: left;
+    vertical-align: top;
+}
+
+.card3 .product .product_photo {
+    float: left;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* flex */
+
+.card4 .product {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* media */
+
+@media (max-width:630px) {
+
+    .card1 .product .product_photo,
+    .card1 .product .product_details,
+    .card2 .product .product_details,
+    .card3 .product .product_details {
+        width: 100%;
+    }
+
+    .card2 .product .product_photo {
+        display: none;
+    }
+
+    .card2 .product .fotoSmalScrine {
+        display: block;
+    }
+
+    .card3 .product .product_details {
+        float: none;
+    }
+
+    .card4 .product {
+        flex-wrap: wrap;
+    }
+
+}
